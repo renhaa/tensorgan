@@ -28,7 +28,7 @@ The images are projected into the latent space using the encoder for editing (e4
 
 By constructing a model based on the Higer-Order Singular Value Decomposition of the latent representation of the data, we propose a method to factorize the latent space of a pretrained StyleGAN model in to different, semantically meaningful, subspaces. 
 
-![](assets/anim-compressed.gif)
+![](assets/factor.gif)
 ## Setup environment
 
 ```
