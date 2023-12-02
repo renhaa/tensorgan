@@ -1,0 +1,18 @@
+name: research  
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies: 
+  - pytorch 
+  - torchvision
+  - dlib 
+  - tqdm 
+  - numpy 
+  - imutils 
+  - easydict
+  - pip
+  - pip:
+    - ninja
+    - tntorch
+    - functorch
