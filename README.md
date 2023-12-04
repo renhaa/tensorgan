@@ -6,11 +6,9 @@ CVPRW2022 - Tensor-based Emotion Editing in the StyleGAN Latent Space
 
 [![arXiv](https://img.shields.io/badge/arXiv-1234.56789-b31b1b.svg)](https://arxiv.org/abs/2205.06102)
 
-<!-- [Poster](docs/resources/poster.pdf) |
-[Demo](demo.ipynb)  -->
 ### Tensor-based Emotion Editing in the StyleGAN Latent Space
 #### René Haas and Stella Graßhof and Sami S. Brandt  
-*Presented at the AI for content creation workshot at CVPR2022 in New Orleans*
+*Presented at the AI for content creation workshop at CVPR2022 in New Orleans*
 
 ![Teaser](assets/teaser.png)
 
@@ -19,14 +17,12 @@ CVPRW2022 - Tensor-based Emotion Editing in the StyleGAN Latent Space
 > In this paper, we use a tensor model based on the Higher-Order Singular Value Decomposition (HOSVD) to discover semantic directions in Generative Adversarial Networks. This is achieved by first embedding a structured facial expression database into the latent space using the e4e encoder. Specifically, we discover directions in latent space corresponding to the six prototypical emotions: anger, disgust, fear, happiness, sadness, and surprise, as well as a direction for yaw rotation. These latent space directions are employed to change the expression or yaw rotation of real face images. We compare our found directions to similar directions found by two other methods. The results show that the visual quality of the resultant edits are on par with State-of-the-Art. It can also be concluded that the tensor-based model is well suited for emotion and yaw editing, i.e., that the emotion or yaw rotation of a novel face image can be robustly changed without a significant effect on identity or other attributes in the images.
 
 ## Method
-
-
 We use the [Binghamton University 3D Facial Expression (BU-3DFE)](https://www.cs.binghamton.edu/~lijun/Research/3DFE/3DFE_Analysis.html) dataset.
 
 The images are projected into the latent space using the encoder for editing (e4e) by 
 [Tov et. al. (SIGGRAPH 2021)](https://github.com/omertov/encoder4editing)
 
-By constructing a model based on the Higer-Order Singular Value Decomposition of the latent representation of the data, we propose a method to factorize the latent space of a pretrained StyleGAN model in to different, semantically meaningful, subspaces. 
+By constructing a model based on the Higer-Order Singular Value Decomposition of the latent representation of the data, we propose a method to factorize the latent space of a pretrained StyleGAN model into different, semantically meaningful, subspaces. 
 
 ![](assets/factor.gif)
 ## Setup environment
@@ -44,8 +40,6 @@ mv ffhq-res1024-mirror-stylegan2-noaug.pkl pretrained_models/ffhq-res1024-mirror
 
 
 ##  Example Use 
-
-
 ```python
 import torch
 from models.StyleGANWrapper import StyleGAN
@@ -77,3 +71,17 @@ im.save("assets/demo.png")
 Due to license restrictiction we cannot release the directions found using the BU-3DFE Dataset.
 
 We are looking into releasing precalculated directions on a less restrictive dataset soon. 
+
+## Citation 
+If you find this useful for your research, please cite our [paper](https://arxiv.org/abs/2205.06102)
+
+```bibtex
+@article{haas2022tensorgan,
+  title   = {Tensor-based Emotion Editing in the StyleGAN Latent Space},
+  url     = {http://arxiv.org/abs/2111.04554},
+  note    = {Accepted at AI4CC @ CVPRW 2022},
+  journal = {arXiv:2205.06102 [cs]},
+  author  = {Haas, René and Graßhof, Stella and Brandt, Sami Sebastian},
+  year    = {2022},
+}
+``` 
